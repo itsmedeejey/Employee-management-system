@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": " npm run index.js"
+    "dev": " nodemon index.js"
   },
   "author": "deejey",
   "license": "ISC",
@@ -12,6 +12,8 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mysql2": "^3.14.0"
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.0",
+    "router": "^2.2.0"
   }
 }
