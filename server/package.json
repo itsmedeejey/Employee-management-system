@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": " npm run index.js"
+  },
+  "author": "deejey",
+  "license": "ISC",
+  "description": "An employee management system backend",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
+  }
+}
