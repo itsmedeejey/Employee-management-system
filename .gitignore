@@ -1,4 +1,6 @@
+# Ignore node_modules and dependencies
+node_modules/
 
-#secrect
+# Ignore environment variables
 .env
-node_modules
+.env.local
