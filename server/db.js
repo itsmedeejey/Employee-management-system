@@ -51,3 +51,15 @@ export  async function getEmp(emp_no) {
 
 return rows;
 }
+
+export async function addDept(dept_number,dept_name,mng_no) {
+  const query = `insert into department (dept_number,dept_name,manager_no) values(?,?,?)`;
+  const [rows] = await pool.execute(query,[dept_number,dept_name,mng_no]);
+  return rows;
+  
+}
+export async function getDept(dept_number) {
+  const query = `select * from  department where dept_number =?`;
+  const [rows] = await pool.execute(query,[dept_number]);
+  return rows;
+}

@@ -10,10 +10,13 @@
   "license": "ISC",
   "description": "An employee management system backend",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcrypt-nodejs": "^0.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.14.0",
+    "nodemon": "^3.1.9",
     "router": "^2.2.0"
   }
 }
