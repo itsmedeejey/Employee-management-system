@@ -4,16 +4,16 @@ import { getAllEmp,getEmp,putEmp } from '../db.js';
 const router  = Router();
 
 router.get("/employees",async (req,res)=>{
-    const rows = await getAllEmp()
+    const data = await getAllEmp()
     res.json({
-        rows
+       data 
     })
 })
 router.get("/employee/:id",async (req,res)=>{
     const id =  req.params.id;
-    const rows = await getEmp(id)
+    const data = await getEmp(id)
     res.json({
-        rows
+        data
     })  
 })
 

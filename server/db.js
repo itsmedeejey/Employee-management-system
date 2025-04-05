@@ -27,16 +27,16 @@ pool.getConnection((err, connection) => {
 
 
  export  async function putEmp(f_name,l_name,emp_no,address,salary,dept_number){
-  const  [rows] = await pool.query(`insert into employee (f_name,l_name,emp_no,address,salary,dept_number)
-  values(?,?,?,?,?,?)`,[f_name,l_name,emp_no,address,salary,dept_number])
+  const query = `insert into employee (f_name,l_name,emp_no,address,salary,dept_number)
+  values(?,?,?,?,?,?)`
+  const  [rows] = await pool.execute(query,[f_name,l_name,emp_no,address,salary,dept_number])
   return rows;
 }
 
 
 
-// putEmp("deejey","..","900","fhasdhfh",274429,3) ;
 export  async function getEmp(emp_no) { 
-  const [rows] = await pool.query(`SELECT 
+  const query =`SELECT 
           e.f_name, 
           e.l_name, 
           e.emp_no, 
@@ -47,9 +47,10 @@ export  async function getEmp(emp_no) {
       JOIN department d ON e.dept_number = d.dept_number
       JOIN project p ON e.dept_number = p.dept_number
       WHERE e.emp_no = ?
-      GROUP BY e.f_name, e.l_name, e.emp_no, d.dept_name, d.dept_number`,[emp_no]);
+      GROUP BY e.f_name, e.l_name, e.emp_no, d.dept_name, d.dept_number`;
+      const [rows]= await pool.execute(query,[emp_no]);
 
-return rows;
+        return rows;
 }
 
 export async function addDept(dept_number,dept_name,mng_no) {
@@ -63,3 +64,5 @@ export async function getDept(dept_number) {
   const [rows] = await pool.execute(query,[dept_number]);
   return rows;
 }
+
+
